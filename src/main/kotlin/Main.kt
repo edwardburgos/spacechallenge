@@ -11,10 +11,6 @@ fun main() {
 
     }
     var resultados = Main()
-    println("Para u1 necesitamos ${resultados.budgets[0]} para u2 ${resultados.budgets[1]}")
-//    for (elements in ArrayList<Item>(resultados.itemsPhase1.plus(resultados.itemsPhase2))) {
-//        println("${elements.name} pesa ${elements.weight}")
-//    }
- //  println(ArrayList<Item>(resultados.itemsPhase1.plus(resultados.itemsPhase2)))
-    //simulation.runSimulation(rocketsU1, rocketsU2)
+    println("To send the U1 rocket safely in both phases, a budget of ${resultados.budgets[0]} is needed.")
+    println("To send the U2 rocket safely in both phases, a budget of ${resultados.budgets[1]} is needed.")
 }

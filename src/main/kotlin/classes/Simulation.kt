@@ -24,6 +24,7 @@ class Simulation {
             } else {
                 rocketsU1.add(currentRocket)
                 currentRocket = U1()
+                currentRocket.carry(element)
             }
         }
         return rocketsU1
@@ -34,16 +35,13 @@ class Simulation {
         var currentRocket = U2()
         for (element in itemsArray) {
             if (currentRocket.canCarry(element)) {
-                println("cardi ${element.weight}")
                 currentRocket.carry(element)
             } else {
-                println("ya no puedo ${element.weight}")
                 rocketsU2.add(currentRocket)
                 currentRocket = U2()
                 currentRocket.carry(element)
             }
         }
-        println(rocketsU2.size)
         return rocketsU2
     }
 
@@ -53,19 +51,14 @@ class Simulation {
         for (element in rocketsU1Array) {
             while (!(element.launch() && element.land())) {
                 totalBudgetU1 += element.cost
-                println("presupuesto U1 ${totalBudgetU1}")
             }
         }
         for (element in rocketsU2Array) {
-            println("${element.cost} ff")
-            println("cuesta ${element.cost}")
             while (!(element.launch() && element.land())) {
 
                 totalBudgetU2 = totalBudgetU2 + element.cost
 
             }
-            println("cuestdda ${element.cost}")
-            println(totalBudgetU2)
         }
         return arrayOf(totalBudgetU1, totalBudgetU2)
     }
