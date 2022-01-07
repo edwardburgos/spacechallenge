@@ -49,15 +49,16 @@ class Simulation {
         var totalBudgetU1 = 0
         var totalBudgetU2 = 0
         for (element in rocketsU1Array) {
-            while (!(element.launch() && element.land())) {
+
+            totalBudgetU1 += element.cost
+            while (element.launch() || element.land()) {
                 totalBudgetU1 += element.cost
             }
         }
         for (element in rocketsU2Array) {
-            while (!(element.launch() && element.land())) {
-
-                totalBudgetU2 = totalBudgetU2 + element.cost
-
+            totalBudgetU2 += element.cost
+            while (element.launch() || element.land()) {
+                totalBudgetU2 += element.cost
             }
         }
         return arrayOf(totalBudgetU1, totalBudgetU2)

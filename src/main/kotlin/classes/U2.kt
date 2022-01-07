@@ -1,7 +1,7 @@
 package classes
 
 class U2: Rocket() {
-    override val cost: Int = 120000000
+    override val cost: Int = 120
     override val weight: Int = 18000
     override val maxWeight: Int = 29000
     override val chanceLauchExplotion: Int = 4
@@ -9,10 +9,10 @@ class U2: Rocket() {
     override var currentWeight: Int = 0
 
     override fun launch(): Boolean {
-        return (0..1000).random() in 0..(((currentWeight / maxWeight) / 100) * chanceLauchExplotion)
+        return (0..100).random() in 0..(chanceLauchExplotion * (currentWeight / maxWeight))
     }
 
     override fun land(): Boolean {
-        return (0..1000).random() in 0..((currentWeight / maxWeight) / 100 * chanceLandingExplotion)
+        return (0..100).random() in 0..(chanceLandingExplotion * (currentWeight / maxWeight))
     }
 }
