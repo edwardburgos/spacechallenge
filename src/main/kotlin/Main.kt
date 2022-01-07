@@ -11,6 +11,6 @@ fun main() {
 
     }
     var resultados = Main()
-    println("To send the U1 rocket safely in both phases, a budget of ${resultados.budgets[0]} is needed.")
-    println("To send the U2 rocket safely in both phases, a budget of ${resultados.budgets[1]} is needed.")
+    println("To send the U1 rocket safely in both phases, a budget of $ ${resultados.budgets[0]} million is needed.")
+    println("To send the U2 rocket safely in both phases, a budget of $ ${resultados.budgets[1]} million is needed.")
 }
