@@ -10,7 +10,8 @@ fun main() {
         val budgets = simulation.runSimulation(rocketsU1, rocketsU2)
 
     }
-    var resultados = Main()
+    var resultados = Main() // TODO: why var?
+    //TODO: this should show the count of rockets
     println("To send the U1 rocket safely in both phases, a budget of $ ${resultados.budgets[0]} million is needed.")
     println("To send the U2 rocket safely in both phases, a budget of $ ${resultados.budgets[1]} million is needed.")
 }
