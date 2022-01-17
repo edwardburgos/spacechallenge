@@ -1,16 +1,21 @@
 package classes
 
-import java.net.URL
-import java.util.ArrayList
 import Item
+import java.net.URL
 
+//TODO: minor format on code
 class Simulation {
     fun loadItems(url: String): ArrayList<Item> {
         val elements = URL(url).readText()
         val elementsArray: ArrayList<Item> = arrayListOf()
         for (element in elements.lines()) {
             val itemString = element.split("=")
-            if (itemString[0] != "" && itemString[1] != "") elementsArray.add(Item(itemString[0], itemString[1].toInt()))
+            if (itemString[0] != "" && itemString[1] != "") elementsArray.add( //TODO: you can create a companion object with the name of the positions example conts val ITEM_NAME = 1
+                Item(
+                    itemString[0],
+                    itemString[1].toInt()
+                )
+            )
         }
         return elementsArray
     }
